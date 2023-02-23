@@ -8,7 +8,7 @@ class MoviesAPI {
     try {
       await Future.delayed(const Duration(seconds: 2));
       final moviesData =
-          await rootBundle.rootBundle.loadString('data/movies.jso');
+          await rootBundle.rootBundle.loadString('data/movies.json');
       final moviesList = json.decode(moviesData) as List<dynamic>;
       return moviesList.map((e) => Movie.fromJson(e)).toList();
     } catch (e) {
